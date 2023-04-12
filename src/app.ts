@@ -85,3 +85,16 @@ function padLeft(padding: number | string, input: string) {
 // L'opérateur in
 // Certaines méthodes qui permettent de prédire le type : Array.isArray par exemple.
 
+
+
+// Alias @ generics   ous allons voir comment il est possible d'éviter la répétition dans la déclaration de type via les alias.
+function first<Type> (arg: Type[]): Type{
+ return arg[0]
+}
+const aad = first(['test1', 'test3', 3])
+const aa = first(['test1', 'test3', 'test2'])
+
+// 
+type DateString = string
+type Id = string | number
+// type EventListener = (e: Event) => void 

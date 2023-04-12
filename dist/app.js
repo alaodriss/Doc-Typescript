@@ -65,3 +65,10 @@ function padLeft(padding, input) {
 // l'égalité entre 2 union type qui ont des types en commun
 // L'opérateur in
 // Certaines méthodes qui permettent de prédire le type : Array.isArray par exemple.
+// Alias @ generics   ous allons voir comment il est possible d'éviter la répétition dans la déclaration de type via les alias.
+function first(arg) {
+    return arg[0];
+}
+const aad = first(['test1', 'test3', 3]);
+const aa = first(['test1', 'test3', 'test2']);
+// type EventListener = (e: Event) => void 
