@@ -41,3 +41,27 @@ const increment = (e) => {
     }
 };
 compteur === null || compteur === void 0 ? void 0 : compteur.addEventListener('click', increment);
+// Type Narrowing
+function printId(id) {
+    if (typeof id == "number") {
+        console.log((id * 2).toString());
+    }
+    else {
+        console.log(id.toUpperCase());
+    }
+}
+// Le Narrowing qui est le processus qui permet, via des conditions, de réduire les types possible. 
+function padLeft(padding, input) {
+    if (typeof padding === "number") {
+        // Avec cette condition, typescript sait maintenant que padding est un nombre 
+        return new Array(padding + 1).join(" ") + input;
+    }
+    // Ici il sait que c'est une chaine de caractères
+    return padding + input;
+}
+// Le Narrowing peut se faire grâce à plusieurs méthodes :
+// typeof
+// instanceof
+// l'égalité entre 2 union type qui ont des types en commun
+// L'opérateur in
+// Certaines méthodes qui permettent de prédire le type : Array.isArray par exemple.
